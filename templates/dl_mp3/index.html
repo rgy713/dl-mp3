@@ -1,0 +1,18 @@
+{% extends "dl_mp3/base.html" %}
+{% load staticfiles %}
+{% block sub_content %}
+    <form id="id-url-reg-form" action="#" enctype="multipart/form-data"
+          novalidate="novalidate" onsubmit="return false;" target="_blank">{% csrf_token %}
+        <div class="dy-row">
+            <input id="id-url-select" class="dy-input" type="text" name="url" placeholder="URL" value=""/>
+        </div>
+        <div class="dy-row">
+            <button id="dyid-getvi" type="submit" class="dy-btn dy-col-blue">解析</button>
+        </div>
+        <input id="dyid-isIos" type="hidden" name="isIos" value=""/>
+    </form>
+    <span class="dy-row1 dy-loader"></span>
+
+    <script src="{% static 'assets/js/jquery.fileDownload.js' %}"></script>
+    <script src="{% static 'assets/js/mp3Download.min.js' %}">    </script>
+{% endblock %}
